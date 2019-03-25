@@ -4,12 +4,17 @@ public class TwoSum {
     public int[] twoSum(int[] givenNums,int traget) {
         int[] result = new int[2];
         int size = givenNums.length;
+        boolean exit = false;
         for (int i = 0; i < size; i++) {
+            if (exit){
+                break;
+            }
             for (int j = i+1; j < size; j++) {
                 if (traget == (givenNums[i] + givenNums[j])) {
                     result[0] = i;
                     result[1] = j;
-                    return result;
+                    exit = true;
+                    break;
                 }
             }
         }
